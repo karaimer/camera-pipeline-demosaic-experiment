@@ -19,7 +19,7 @@ close all
 clear all;
 
 % Read image
-a = uint8(imread('NIKOND40_0008_stage4_from_txt.tif')/256);
+a = uint8(imread('..\..\..\NIKOND40_0008_stage4_from_txt.tif')/256);
 
 % Create Bayer sampled mosaic 
 X = mosaic(a);
