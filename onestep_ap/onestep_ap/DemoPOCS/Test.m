@@ -47,6 +47,18 @@ out_pocs = im2double(out_pocs);
 % dlmwrite('.\RGB_bilinear\g.txt',RGB_bilinear(:,:,2),'delimiter',' ', 'precision','%.6f');
 % dlmwrite('.\RGB_bilinear\b.txt',RGB_bilinear(:,:,3),'delimiter',' ', 'precision','%.6f');
 % 
-dlmwrite('.\out_pocs\r.txt',out_pocs(:,:,1),'delimiter',' ', 'precision','%.6f');
-dlmwrite('.\out_pocs\g.txt',out_pocs(:,:,2),'delimiter',' ', 'precision','%.6f');
-dlmwrite('.\out_pocs\b.txt',out_pocs(:,:,3),'delimiter',' ', 'precision','%.6f');
+% dlmwrite('.\out_pocs\r.txt',out_pocs(:,:,1),'delimiter',' ', 'precision','%.6f');
+% dlmwrite('.\out_pocs\g.txt',out_pocs(:,:,2),'delimiter',' ', 'precision','%.6f');
+% dlmwrite('.\out_pocs\b.txt',out_pocs(:,:,3),'delimiter',' ', 'precision','%.6f');
+
+% save image as binary file 
+fd = fopen('.\out_pocs\r.txt','w');
+    fwrite(fd,out_pocs(:,:,1)','double');
+    fclose(fd);
+    
+fd2 = fopen('.\out_pocs\g.txt','w');
+    fwrite(fd2,out_pocs(:,:,2)','double');
+    fclose(fd2);
+fd3 = fopen('.\out_pocs\b.txt','w');
+    fwrite(fd3,out_pocs(:,:,3)','double');
+    fclose(fd3);
